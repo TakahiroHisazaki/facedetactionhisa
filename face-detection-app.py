@@ -36,8 +36,9 @@ if uploaded_file is not None:
     res = requests.post(face_api_url, params=params, headers=headers, data=binary_img)
 
     draw = ImageDraw.Draw(img)
-    textsize = 18 # 描画するテキストの大きさ
-    font = ImageFont.truetype("arial.ttf", size=textsize)
+    #font_path = 'C:\WINDOWS\FONTS\times.ttf'
+    textsize = 40 # 描画するテキストの大きさ
+    font = ImageFont.truetype("times.ttf", size=textsize)
 
     results = res.json()
     for result in results:
