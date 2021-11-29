@@ -37,7 +37,7 @@ if uploaded_file is not None:
 
     draw = ImageDraw.Draw(img)
     textsize = 18 # 描画するテキストの大きさ
-    font = ImageFont.truetype(r'C:\Windows\Fonts\arial.ttf', size=textsize)
+    font = ImageFont.truetype('C:\Windows\Fonts\arial.ttf', size=textsize)
 
     results = res.json()
     for result in results:
