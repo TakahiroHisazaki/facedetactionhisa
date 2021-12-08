@@ -37,7 +37,7 @@ if uploaded_file is not None:
 
     draw = ImageDraw.Draw(img)
     textsize = 18 # 描画するテキストの大きさ
-    font = ImageFont.truetype(r'C:\windows\fonts\meiryo.ttc', size=textsize)
+    font = ImageFont.truetype('meiryo.ttc', size=textsize)
 
     results = res.json()
     for result in results:
