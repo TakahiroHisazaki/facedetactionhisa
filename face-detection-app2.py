@@ -38,7 +38,7 @@ if uploaded_file is not None:
     draw = ImageDraw.Draw(img)
     textsize = 20 # 描画するテキストの大きさ
     font_path = "C:\\Windows\\Fonts\\YuGothL.ttc"
-    font = ImageFont.truetype(font_path, size=textsize)
+    #font = ImageFont.truetype(font_path, size=textsize)
 
     results = res.json()
     for result in results:
