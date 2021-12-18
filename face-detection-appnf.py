@@ -45,7 +45,7 @@ if uploaded_file is not None:
         textage = result['faceAttributes']['age']
         textemotion = result['faceAttributes']['emotion']
         draw.rectangle([(rect['left'], rect['top']),(rect['left']+rect['width'], rect['top']+rect['height'])], fill=None, outline='green', width=5)
-        draw.text((rect['left']-70, rect['top']-10),'年齢='+str(textage), fill='red', spacing=1, align='left')
-        draw.text((rect['left']+rect['width']+2, rect['top']-10),'怒り='+str(textemotion['anger'])+'\n軽蔑='+str(textemotion['contempt'])+'\n嫌悪='+str(textemotion['disgust'])+'\n恐れ='+str(textemotion['fear'])+'\n喜び='+str(textemotion['happiness'])+'\n中性='+str(textemotion['neutral'])+'\n悲しみ='+str(textemotion['sadness'])+'\n驚き='+str(textemotion['surprise']), fill='blue', spacing=1, align='left')
+        draw.text((rect['left']-70, rect['top']-10),'age='+str(textage), fill='red', spacing=1, align='left')
+        draw.text((rect['left']+rect['width']+2, rect['top']-10),'anger='+str(textemotion['anger'])+'\ncontempt='+str(textemotion['contempt'])+'\ndisgust='+str(textemotion['disgust'])+'\nfear='+str(textemotion['fear'])+'\nhappiness='+str(textemotion['happiness'])+'\nneutral='+str(textemotion['neutral'])+'\nsadness='+str(textemotion['sadness'])+'\nsurprise='+str(textemotion['surprise']), fill='blue', spacing=1, align='left')
 
     st.image(img, caption='Uploaded Image.', use_column_width = True)
