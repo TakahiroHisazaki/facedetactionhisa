@@ -37,8 +37,8 @@ if uploaded_file is not None:
 
     draw = ImageDraw.Draw(img)
     textsize = 20 # 描画するテキストの大きさ
-    font_path = "C:\\Windows\\Fonts\\YuGothL.ttc"
-    #font = ImageFont.truetype(font_path, size=textsize)
+    #font_path = "C:\\Windows\\Fonts\\YuGothL.ttc"
+    font = ImageFont.truetype(size=textsize)
 
     results = res.json()
     for result in results:
@@ -47,6 +47,6 @@ if uploaded_file is not None:
         textemotion = result['faceAttributes']['emotion']
         draw.rectangle([(rect['left'], rect['top']),(rect['left']+rect['width'], rect['top']+rect['height'])], fill=None, outline='green', width=5)
         #draw.text((rect['left']-70, rect['top']-10),'age='+str(textage), font=font, fill='red', spacing=1, align='left')
-        draw.text((rect['left']+rect['width']+2, rect['top']-10),'anger='+str(textemotion['anger'])+'\ncontempt='+str(textemotion['contempt'])+'\ndisgust='+str(textemotion['disgust'])+'\nfear='+str(textemotion['fear'])+'\nhappiness='+str(textemotion['happiness'])+'\nneutral='+str(textemotion['neutral'])+'\nsadness='+str(textemotion['sadness'])+'\nsurprise='+str(textemotion['surprise'])+'\nage='+str(textage), fill='red', spacing=1, align='left')
+        draw.text((rect['left']+rect['width']+2, rect['top']-10),'anger='+str(textemotion['anger'])+'\ncontempt='+str(textemotion['contempt'])+'\ndisgust='+str(textemotion['disgust'])+'\nfear='+str(textemotion['fear'])+'\nhappiness='+str(textemotion['happiness'])+'\nneutral='+str(textemotion['neutral'])+'\nsadness='+str(textemotion['sadness'])+'\nsurprise='+str(textemotion['surprise'])+'\nage='+str(textage), font=font, fill='red', spacing=1, align='left')
 
     st.image(img, caption='Uploaded Image.', use_column_width = True)
